@@ -12,27 +12,27 @@ def quick_sort(array: list):
 
 
 class Employee:
-    def __init__(self, id: int, skill: float(0 | 10)):
+    def __init__(self, id: int, skill: int(0 | 100)):
         self.id = id
-        self.skill = skill
+        self.skill = skill/10
 
     def __gt__(self, other):
-        if self.id > other.id:
+        if self.skill > other.skill:
             return True
-        elif self.id == other.id:
-            return self.skill > other.skill
+        elif self.skill == other.skill:
+            return self.id > other.id
 
     def __lt__(self, other):
-        if self.id < other.id:
+        if self.skill < other.skill:
             return True
-        elif self.id == other.id:
-            return self.skill < other.skill
+        elif self.skill == other.skill:
+            return self.id < other.id
 
     def __eq__(self, other):
         return self.id == other.id and self.skill == other.skill
 
     def __repr__(self):
-        return f"Employee №{self.id}, skill: {self.skill}"
+        return f"Employee №{self.id}, skill: {self.skill:.1f}"
 
     # @staticmethod
     # def sort_stuff(array: list):
@@ -40,11 +40,11 @@ class Employee:
 
 
 if __name__ == '__main__':
-    x = int(input("Enter array's length"))
-    arr = [Employee(randint(0, 100_000), uniform(0, 10)) for i in range(x)]
+    x = int(input("Enter array's length:\n"))
+    arr = [Employee(randint(0, x*10), randint(0,100)) for i in range(x)]
     print(*quick_sort(arr), sep="\n")
     print("---" * 20)
-    
+
 
 
 
@@ -59,16 +59,16 @@ if __name__ == '__main__':
     # print("---"* 20)
     # #test_2
     # print("test №1")
-    # arr = [Employee(randint(0,100_000), uniform(0,10)) for i in range(10)]
+    # arr = [Employee(randint(0,100), randint(0,100)) for i in range(10)]
     # print(*quick_sort(arr), sep="\n")
     # print("---" * 20)
     # # test_3
     # print("test №3")
-    # arr = [Employee(randint(0, 100_000), uniform(0, 10)) for i in range(100)]
+    # arr = [Employee(randint(0, 1_000), randint(0,100)) for i in range(100)]
     # print(*quick_sort(arr), sep="\n")
     # print("---" * 20)
     # # test_4
     # print("test №4")
-    # arr = [Employee(randint(0, 100_000), uniform(0, 10)) for i in range(10_000)]
+    # arr = [Employee(randint(0, 100_000), randint(0,100)) for i in range(10_000)]
     # print(*quick_sort(arr), sep="\n")
     # print("---" * 20)
