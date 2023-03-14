@@ -1,3 +1,4 @@
+from random import randint, uniform
 def quick_sort(array: list):
     if len(array) <= 1:
         return array
@@ -35,8 +36,39 @@ class Employee:
 
     # @staticmethod
     # def sort_stuff(array: list):
+    #     pass
 
 
 if __name__ == '__main__':
-    arr  = [Employee(23, 0.5),Employee(2, 0.5),Employee(6, 3.5),Employee(6, 4),Employee(18, 3.5),Employee(21, 3.5)]
-    print(*quick_sort(arr), sep = "\n")
+    x = int(input("Enter array's length"))
+    arr = [Employee(randint(0, 100_000), uniform(0, 10)) for i in range(x)]
+    print(*quick_sort(arr), sep="\n")
+    print("---" * 20)
+    
+
+
+
+
+
+
+    # manual tests
+    # #test_1
+    # print("test №1")
+    # arr  = [Employee(23, 0.5),Employee(2, 0.5),Employee(6, 3.5),Employee(6, 4),Employee(18, 3.5),Employee(21, 3.5)]
+    # print(*quick_sort(arr), sep = "\n")
+    # print("---"* 20)
+    # #test_2
+    # print("test №1")
+    # arr = [Employee(randint(0,100_000), uniform(0,10)) for i in range(10)]
+    # print(*quick_sort(arr), sep="\n")
+    # print("---" * 20)
+    # # test_3
+    # print("test №3")
+    # arr = [Employee(randint(0, 100_000), uniform(0, 10)) for i in range(100)]
+    # print(*quick_sort(arr), sep="\n")
+    # print("---" * 20)
+    # # test_4
+    # print("test №4")
+    # arr = [Employee(randint(0, 100_000), uniform(0, 10)) for i in range(10_000)]
+    # print(*quick_sort(arr), sep="\n")
+    # print("---" * 20)
