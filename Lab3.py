@@ -71,12 +71,13 @@ class TextEditor:
         print("File deleted and memory cleared.")
 
 
-editor = TextEditor()
-editor.openTextEditor("example.txt")
-editor.addText("Hello,")
-editor.addText("world!")
-editor.cursorLeft(3)
-editor.deleteText(4)
-editor.cursorRight(1)
-editor.addText("Bohdan Ips-12")
-editor.delete()
+if __name__ == '__main__':
+    editor = TextEditor()
+    editor.openTextEditor("example.txt")
+    editor.addText("Hello,")
+    editor.addText("world!")
+    editor.cursorLeft(3)
+    editor.deleteText(4)
+    editor.cursorRight(1)
+    editor.addText("Bohdan Ips-12")
+    editor.delete()
