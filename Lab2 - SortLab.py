@@ -1,11 +1,11 @@
 from random import randint, uniform
 
 
-# **Шовкопляс Богдан Вікторович **
+# **Іпс - 12 Шовкопляс Богдан Вікторович **
 
 # Реалізуйте програму для сортування списку кандидатів на роботу на основі їхньої кваліфікації за допомогою алгоритму швидкого сортування (quick sort). Відсортувати за ідентифікатором рекрутера (за зростанням) та кваліфікацією (від найбільшої до найменшої).
 # Приклад рядку (ідентифікатор кандидата,ідентифікатор рекрутера,індекс кваліфікації від 0.1 до 1.0): "10,0.75"
- 
+
 def quick_sort(array: list):
     if len(array) <= 1:
         return array
@@ -21,21 +21,21 @@ def quick_sort(array: list):
 class Employee:
     def __init__(self, id: int, skill: int(0 | 100)):
         self.id = id
-        self.skill = skill/10
+        self.skill = skill / 10
 
-    def __gt__(self, other):
+    def __gt__(self, other) -> bool:
         if self.skill > other.skill:
             return True
         elif self.skill == other.skill:
             return self.id > other.id
 
-    def __lt__(self, other):
+    def __lt__(self, other) -> bool:
         if self.skill < other.skill:
             return True
         elif self.skill == other.skill:
             return self.id < other.id
 
-    def __eq__(self, other):
+    def __eq__(self, other) -> bool:
         return self.id == other.id and self.skill == other.skill
 
     def __repr__(self):
@@ -48,15 +48,10 @@ class Employee:
 
 if __name__ == '__main__':
     x = int(input("Enter array's length:\n"))
-    arr = [Employee(randint(0, x*10), randint(0,100)) for i in range(x)]
+    arr = [Employee(randint(0, x * 10), randint(0, 100)) for i in range(x)]
+    print(arr)
     print(*quick_sort(arr), sep="\n")
     print("---" * 20)
-
-
-
-
-
-
 
     # manual tests
     # #test_1
